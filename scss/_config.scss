@@ -4,9 +4,13 @@ $show-home-image: true;
 $home-image: url("../imgs/resized/Crazy Smiling Peek Cat.jpg");
 $portrait-image: url("../imgs/resized/catto.jpg");
 $background-opacity: 0.9;
-
+$break: 0.7s cubic-bezier(0.27, 0.1, 0, 1);
+$quick: 0.2s ease;
 @mixin easeOut {
-    transition: all 0.5s ease-out;
+    transition: all $break;
+}
+@mixin easeOutQuick {
+    transition: all $quick, opacity 0.1s ease;
 }
 
 @mixin background {
@@ -27,5 +31,28 @@ $background-opacity: 0.9;
             z-index: -1;
             background: rgba($primary-color, 0.7);
         }
+    }
+}
+
+//Media Query Mixins
+
+@mixin breakSm {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+@mixin breakMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin breakLg {
+    @media screen and (max-width: 1170px) {
+        @content;
+    }
+}
+@mixin brealXl {
+    @media screen and (min-width: 1171px) {
+        @content;
     }
 }
