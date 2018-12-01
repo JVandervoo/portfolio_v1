@@ -1,7 +1,8 @@
 $primary-color: #000;
 $secondary-color: #eece1a;
 $show-home-image: true;
-$home-image: url("../imgs/resized/laptop-desk.jpg");
+$home-image: url("../imgs/resized/Crazy Smiling Peek Cat.jpg");
+$portrait-image: url("../imgs/resized/catto.jpg");
 $background-opacity: 0.9;
 
 @mixin easeOut {
@@ -14,6 +15,7 @@ $background-opacity: 0.9;
             background: $home-image;
             background-attachment: fixed;
             background-size: cover;
+            background-position: 85%;
         }
         &:after {
             content: "";
