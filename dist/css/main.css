@@ -220,6 +220,40 @@ main {
     padding: 2rem 1rem;
     border-bottom: #ee71fa 5px solid; }
 
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem; }
+  @media screen and (max-width: 768px) {
+    .projects {
+      grid-template-columns: 1fr 1fr; } }
+  @media screen and (max-width: 500px) {
+    .projects {
+      grid-template-columns: 1fr; } }
+  .projects img {
+    width: 100%;
+    border: 3px solid white;
+    transition: all 0.2s ease, opacity 0.1s ease; }
+    .projects img:hover {
+      border-color: #ee71fa;
+      filter: grayscale(30%); }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease, opacity 0.1s ease; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #ee71fa;
+    color: #222; }
+
+.btn-dark {
+  background: black; }
+
+.btn-light {
+  background: black; }
+
 #main-footer {
   text-align: center;
   padding: 2rem;
