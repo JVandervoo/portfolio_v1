@@ -15,7 +15,7 @@ html {
 body {
     @include background;
     background: $primary-color;
-    color: white;
+    color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
     font-family: "poppins", sans-serif;
@@ -38,8 +38,8 @@ h3 {
     }
     &.sm-heading {
         margin: 0 0 2rem 0;
-        padding: 0.2rem 1rem;
-        background: rgba(lighten($primary-color, 2), 0.5);
+        padding: 1rem 0rem;
+        //background: rgba(lighten($primary-color, 2), 0.5);
     }
 }
 
@@ -61,6 +61,7 @@ header {
 main {
     padding: 4rem;
     height: 100%;
+    min-height: calc(100vh - 60px);
     .icons {
         margin-top: 1rem;
         a {
@@ -81,4 +82,61 @@ main {
             }
         }
     }
+}
+
+.about-info {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas:
+        "bioimage bio bio"
+        "job1 job2 job3";
+    grid-template-columns: 1fr 1fr 1fr;
+    @include breakMd {
+        grid-template-areas:
+            "bioimage"
+            "bio"
+            "job1"
+            "job2"
+            "job3";
+        grid-template-columns: 1fr;
+    }
+    .bio-image {
+        grid-area: bioimage;
+        background: $portrait-image;
+        margin: auto;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        border: 3px solid $secondary-color;
+
+        //width: 250px;
+    }
+    .bio {
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+    .job-1 {
+        grid-area: job1;
+    }
+    .job-2 {
+        grid-area: job2;
+    }
+    .job-3 {
+        grid-area: job3;
+    }
+    .job {
+        background: lighten($primary-color, 5);
+        padding: 2rem 1rem;
+        border-bottom: $secondary-color 5px solid;
+    }
+}
+
+#main-footer {
+    text-align: center;
+    padding: 2rem;
+    background: darken($primary-color, 10);
+    color: set-text-color($primary-color);
+    height: 60px;
 }

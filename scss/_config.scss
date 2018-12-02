@@ -1,11 +1,12 @@
-$primary-color: #000;
-$secondary-color: #eece1a;
+$primary-color: #333;
+$secondary-color: #ee71fa;
 $show-home-image: true;
 $home-image: url("../imgs/resized/Crazy Smiling Peek Cat.jpg");
 $portrait-image: url("../imgs/resized/catto.jpg");
 $background-opacity: 0.9;
 $break: 0.7s cubic-bezier(0.27, 0.1, 0, 1);
 $quick: 0.2s ease;
+
 @mixin easeOut {
     transition: all $break;
 }
@@ -34,8 +35,16 @@ $quick: 0.2s ease;
     }
 }
 
-//Media Query Mixins
+//Set Text Color
+@function set-text-color($color) {
+    @if (lightness($color) > 40) {
+        @return #222;
+    } @else {
+        @return white;
+    }
+}
 
+//Media Query Mixins
 @mixin breakSm {
     @media screen and (max-width: 500px) {
         @content;
